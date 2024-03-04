@@ -1,9 +1,10 @@
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { Search } from "lucide-react";
+import { BellDot, Filter, LucideSettings2, Search } from "lucide-react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { Locations } from "./locations";
+import { Button } from "@/components/ui/button";
 
 const PoppinsFont = Poppins({
   subsets: ["latin"],
@@ -37,7 +38,7 @@ export const NavBar = () => {
     // </div>
 
     <header className="bg-white">
-      <div className="px-4 py-8 flex justify-between items-center gap-x-3">
+      <div className="px-2 pb-4 pt-2 flex justify-between items-center gap-x-3">
         <div className="hidden sm:flex items-center flex-shrink-0  gap-x-2 ">
           <Image
             className="h-8 md:h-10"
@@ -51,7 +52,7 @@ export const NavBar = () => {
           </span>
         </div>
 
-        <div className="xl:max-w-lg 2xl:max-w-2xl  bg-gray-100 rounded-md flex items-center p-1 xs:flex-col">
+        <div className="xl:max-w-lg 2xl:max-w-2xl  bg-gray-100 rounded-md flex items-center p-2 xs:flex-col xs:items-start xs:w-full">
         <div className="flex items-center">
           <Image
             src="/location.png"
@@ -62,15 +63,23 @@ export const NavBar = () => {
           />
           <Locations />
           </div>
-          <div className="w-full relative">
+          <div className="w-full relative flex flex-row justify-between">
+            <div className="flex flex-row">
             <Search className="absolute top-1/2 transform -translate-y-1/2 left-3 h-4 w-4 text-muted-foreground" />
             <Input
               // onChange={} handle changes
-              className=" w-full max-w[510px] pl-9"
+              className="w-full max-w[510px] pl-9"
               placeholder="Restaurents.."
             />
+            </div>
+          <div>
+            <Button variant="ghost" className="opacity-70 hover:opacity-100"><LucideSettings2 /></Button>
           </div>
-          {/* <svg className="ml-auto h-5 px-4 text-gray-500" aria-hidden="true" focusable="false" data-prefix="far" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="svg-inline--fa fa-search fa-w-16 fa-9x"><path fill="currentColor" d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"></path></svg> */}
+          <div>
+            <Button variant="ghost" className="bg-blue-400 hover:bg-blue-500"><BellDot className="h-5 w-5"  /></Button>
+          </div>
+     
+          </div>
         </div>
 
         {/* <div className="ml-auto md:w-48 hidden sm:flex flex-col place-items-end">
@@ -78,7 +87,7 @@ export const NavBar = () => {
       <span className="font-semibold text-sm text-gray-400">Support 24/7</span>
     </div> */}
 
-        <div className="m-4 sm:flex">
+        <div className="hidden m-4 sm:flex">
           <Image src="/profile-user.png" height={30} width={30} alt="profile" />
         </div>
       </div>

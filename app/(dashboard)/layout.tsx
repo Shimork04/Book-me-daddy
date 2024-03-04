@@ -1,5 +1,4 @@
 import { NavBar } from "./_components/navbar";
-import { SideBar } from "./_components/sidebar";
 interface DashBoardProps {
     children: React.ReactNode;
 }
@@ -17,7 +16,6 @@ const DashBoardLayout = ({ children }: DashBoardProps) => {
                     <div className="h-full flex-1">
 
                         <NavBar />
-
                         {children}
 
                     </div>

@@ -18,7 +18,8 @@ const config = {
       },
     },
     screens:{
-      'xs': {'max': '350px'},
+      'xsm':'500px',
+      'xs': {'max': '500px'},
       'sm': '640px',
 
       'md': '768px',
