@@ -7,7 +7,7 @@ interface DashBoardProps {
 const DashBoardLayout = ({ children }: DashBoardProps) => {
 
     return (
-        <main className="h-full">
+        <main className="h-full mb-24">
 
                 <div className="flex h-full gap-x-3">
 

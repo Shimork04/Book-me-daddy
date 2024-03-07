@@ -52,7 +52,7 @@ export const NavBar = () => {
           </span>
         </div>
 
-        <div className="xl:max-w-lg 2xl:max-w-2xl  bg-gray-100 rounded-md flex items-center p-2 xs:flex-col xs:items-start xs:w-full">
+        <div className="xl:max-w-lg 2xl:max-w-2xl  bg-blue-700 rounded-md flex items-center p-2 xs:flex-col xs:items-start xs:w-full">
         <div className="flex items-center">
           <Image
             src="/location.png"
@@ -63,7 +63,7 @@ export const NavBar = () => {
           />
           <Locations />
           </div>
-          <div className="w-full relative flex flex-row justify-between">
+          <div className="w-full relative flex flex-row justify-between my-2">
             <div className="flex flex-row">
             <Search className="absolute top-1/2 transform -translate-y-1/2 left-3 h-4 w-4 text-muted-foreground" />
             <Input
@@ -73,7 +73,7 @@ export const NavBar = () => {
             />
             </div>
           <div>
-            <Button variant="ghost" className="opacity-70 hover:opacity-100"><LucideSettings2 /></Button>
+            <Button variant="ghost" className="opacity-70 hover:opacity-100 bg-white rounded-lg"><LucideSettings2 color="blue" /></Button>
           </div>
           <div>
             <Button variant="ghost" className="bg-blue-400 hover:bg-blue-500"><BellDot className="h-5 w-5"  /></Button>

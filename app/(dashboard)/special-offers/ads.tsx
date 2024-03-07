@@ -22,23 +22,23 @@ export const Ads = () => {
     <div>
       <div className="flex items-center justify-between">
         <span className=" text-xl lg:text-2xl font-semibold">Special Offers</span>
-        <Button variant="ghost" className="m-0">See all</Button>
+        <Button variant="ghost" className="m-0 font-semibold text-blue-700">See all</Button>
       </div>
-      <div className=" mx-11">
+      <div className="m-2">
       <Carousel
         plugins={[plugin.current]}
         className="max-w-md xsm:max-w-lg"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
-        <CarouselPrevious />
+        <CarouselPrevious className="hidden lg:flex" />
         <CarouselContent>
           {imageArray.map((imageUrl, index) => (
-            <CarouselItem key={index} className="pl-1 sm:basis-1/3 md:basis-1/3 lg:basis-1/3 xl:basis-1/4 xs:basis-1/1 xsm:basis-1/2">
+            <CarouselItem key={index} className="pl-4 sm:basis-1/3 md:basis-1/3 lg:basis-1/3 xl:basis-1/4 xs:basis-1/1 xsm:basis-1/2">
               <div className="p-1">
                 <Card>
                   <CardContent className="flex items-center justify-center p-2">
-                    <img className="" src={imageUrl} alt={`Offer ${index + 1}`} />
+                    <img className=" max-h-[160px]" src={imageUrl} alt={`Offer ${index + 1}`}/>
                   </CardContent>
                 </Card>
               </div>
@@ -46,7 +46,7 @@ export const Ads = () => {
           ))}
         </CarouselContent>
         
-        <CarouselNext />
+        <CarouselNext className="hidden lg:flex" />
       </Carousel>
       </div>
     </div>

@@ -2,7 +2,7 @@ import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Toggle } from "@/components/ui/toggle";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -12,11 +12,14 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Clock2Icon, Heart, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export const PopularRestaurants = () => {
+  var id = Math.floor(Math.random() * 90000) + 10000;
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
-  // Array containing paths/URLs of images
   const RestaurantsArray = [
     "/restaurant.jpg",
     "/restaurant.jpg",
@@ -26,57 +29,95 @@ export const PopularRestaurants = () => {
   ];
 
   return (
-    <div>
+    <div className="mt-5 gap-y-2 flex flex-col">
       <div className="flex items-center justify-between">
         <span className=" text-xl lg:text-2xl font-semibold">
           Popular Restaurants
         </span>
-        <Button variant="ghost" className="m-0">
+        <Button variant="ghost" className="m-0 font-semibold text-blue-700">
           See all
         </Button>
       </div>
       <div className="flex gap-x-2">
+        <div>
+        <Select>
+      <SelectTrigger className="h-9 px-2.5 rounded-3xl">
+        <SelectValue placeholder="Cuisines" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem value="apple">Italian</SelectItem>
+          <SelectItem value="banana">Maxican</SelectItem>
+          <SelectItem value="blueberry">Chinese</SelectItem>
+          <SelectItem value="grapes">Indian</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+        </div>
       <div>
-        <Toggle aria-label="Toggle" variant="outline">Nearest</Toggle>
+        <Toggle aria-label="Toggle" variant="outline" size="sm" className="xs:text-xs">Nearest</Toggle>
       </div>
       <div>
-        <Toggle aria-label="Toggle" variant="outline">Great Offers</Toggle>
+        <Toggle aria-label="Toggle" variant="outline" size="sm" className="xs:text-xs">Great Offers</Toggle>
       </div>
       <div>
-        <Toggle aria-label="Toggle" variant="outline">Ratings</Toggle>
+        <Toggle aria-label="Toggle" variant="outline" size="sm" className="xs:text-xs">Ratings</Toggle>
       </div>
       </div>
-      <div className=" mx-11">
+      <div className="w-full flex justify-center items-center">
+      <div className="mx-11 xs:mx-5 xs:max-w-[310px]">
         <Carousel
           plugins={[plugin.current]}
-          className="max-w-md xsm:max-w-lg"
+          className="max-w-xl sm:max-w-2xl md:max-w-2xl lg:max-w-2xl"
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
-          <CarouselPrevious />
+          <CarouselPrevious className="hidden lg:flex" />
           <CarouselContent>
             {RestaurantsArray.map((imageUrl, index) => (
+              <Link href={`/restaurant/${id}`} >
               <CarouselItem
                 key={index}
-                className="pl-1 sm:basis-1/3 md:basis-1/3 lg:basis-1/3 xl:basis-1/4 xs:basis-1/1 xsm:basis-1/2"
+                className="sm:basis-1/2 md:basis-1/2 lg:basis-1/2 xl:basis-1/2 xs:basis-[80%] xsm:basis-[80%]"
               >
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex items-center justify-center p-2">
+                <div className="">
+                  <Card className="border border-black">
+                    <CardContent className="flex flex-col items-center justify-center p-2">
                       <img
-                        className=" object-fill"
+                        className="object-fill rounded-lg"
                         src={imageUrl}
                         alt={`Offer ${index + 1}`}
-                      />
+                        
+                        />
                     </CardContent>
+                    <CardFooter>
+                      
+                      <div className="gap-y-3 flex flex-col justify-start">
+                      <span className="m-0 p-0 font-serif overflow-ellipsis text-xl font-semibold">The Italian Affair</span> 
+                      <div className="flex gap-x-2">
+                      <Button variant="outline" size="sm">Italian Cuisine</Button>
+                      <Button variant="outline" size="sm">10% OFF</Button>
+                      </div>
+                        <div className="flex gap-x-2">
+                          <Clock2Icon />
+                          <span>10:00-19:45</span>
+                          </div>
+                          <div className="flex gap-x-2">
+                            <MapPin />
+                            <span>Nr.Pitambar Circle</span>
+                          </div>
+                          </div>
+                    </CardFooter>
                   </Card>
                 </div>
               </CarouselItem>
+              </Link>
             ))}
           </CarouselContent>
 
-          <CarouselNext />
+          <CarouselNext className="hidden lg:flex" />
         </Carousel>
+        </div>
       </div>
     </div>
   );

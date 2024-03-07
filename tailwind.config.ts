@@ -20,6 +20,7 @@ const config = {
     screens:{
       'xsm':'500px',
       'xs': {'max': '500px'},
+      'xs-6':{'max':'600px'},
       'sm': '640px',
 
       'md': '768px',
