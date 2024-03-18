@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { BellDot, Filter, LucideSettings2, Search } from "lucide-react";
+import { BellDot, Filter, LucideSettings2, Search, UserCircle2 } from "lucide-react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { Locations } from "./locations";
@@ -13,47 +13,23 @@ const PoppinsFont = Poppins({
 
 export const NavBar = () => {
   return (
-    // <div classNameName="flex items-center gap-x-4 p-5">
-    //   <div classNameName="logo">
-    //     <span classNameName="h-full w-full bg-red-400">logo space</span>
-    //   </div>
-    //   <div classNameName="location">
-    //     <div>
-    //       <Image height={4} width={4} src="/location.png" alt="location" />
-    //     </div>
-    //     <div>
-    //       <span classNameName="w-5">open dialog</span>
-    //     </div>
-    //   </div>
-    //   <div>
-    //     <div classNameName="w-full relative">
-    //       <Search classNameName="absolute top-1/2 transform -translate-y-1/2 left-3 h-4 w-4 text-muted-foreground" />
-    //       <Input
-    //         // onChange={} handle changes
-    //         classNameName=" w-full max-w[516px] pl-9"
-    //         placeholder="Search restaurents.."
-    //       />
-    //     </div>
-    //   </div>
-    // </div>
-
-    <header className="bg-white">
-      <div className="px-2 pb-4 pt-2 flex justify-between items-center gap-x-3">
+    <header className=" bg-transparent">
+      <div className="p-3  flex justify-between items-center gap-x-3 bg-blue-700 rounded-b-3xl">
         <div className="hidden sm:flex items-center flex-shrink-0  gap-x-2 ">
-          <Image
+          {/* <Image
             className="h-8 md:h-10"
             src="/logo.png"
             alt=""
             width={80}
             height={80}
-          />
-          <span className={cn("font-semibold text-2xl", PoppinsFont.className)}>
+          /> */}
+          <span className={cn("font-semibold text-2xl text-white", PoppinsFont.className)}>
             TableUp
           </span>
         </div>
 
-        <div className="xl:max-w-lg 2xl:max-w-2xl  bg-blue-700 rounded-md flex items-center p-2 xs:flex-col xs:items-start xs:w-full">
-        <div className="flex items-center">
+        <div className="xl:max-w-lg 2xl:max-w-2xl  bg-blue-500 rounded-md flex items-center xs:p-2 py-1 px-2 xs:flex-col xs:items-start xs:w-full md:w-3/5 ">
+        <div className="flex items-center gap-x-1">
           <Image
             src="/location.png"
             alt=""
@@ -63,8 +39,8 @@ export const NavBar = () => {
           />
           <Locations />
           </div>
-          <div className="w-full relative flex flex-row justify-between my-2">
-            <div className="flex flex-row">
+          <div className="w-full relative flex flex-row justify-between my-2 gap-x-3">
+            <div className="flex flex-row w-full">
             <Search className="absolute top-1/2 transform -translate-y-1/2 left-3 h-4 w-4 text-muted-foreground" />
             <Input
               // onChange={} handle changes
@@ -87,8 +63,8 @@ export const NavBar = () => {
       <span className="font-semibold text-sm text-gray-400">Support 24/7</span>
     </div> */}
 
-        <div className="hidden m-4 sm:flex">
-          <Image src="/profile-user.png" height={30} width={30} alt="profile" />
+        <div className="hidden sm:flex">
+          <UserCircle2 size={40} color="white" />
         </div>
       </div>
     </header>

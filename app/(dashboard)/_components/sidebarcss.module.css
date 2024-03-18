@@ -1,0 +1,21 @@
+.ul li a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.ul li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+/* flex flex-col justify-between items-center text-sm font-medium  text-gray-500 dark:text-gray-400 sm:mt-0 gap-y-6 */
+

@@ -7,6 +7,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, MapPin, Star } from "lucide-react";
 import { TabList } from "./_components/tablist";
+import Link from "next/link";
 
 const RestaurantsArray = [
   "/restaurant.jpg",
@@ -90,9 +91,9 @@ interface Slide {
 
   return (
     <>
-    <main className="w-full h-full bg-white">
+    <main className="w-full h-full flex flex-col items-center justify-center">
       {/* Container */}
-      <div className="w-full h-full min-h-screen max-w-[1000px]">
+      <div className="w-full h-full min-h-screen max-w-[1000px] ">
         <div className="w-full h-full md:flex justify-center items-center gap-20 pt-16 md:pt-10 md:gap-10">
           {/* Image  */}
           <div className="min-w-fit">
@@ -101,11 +102,13 @@ interface Slide {
                 src={slides[curentIndex].img}
                 alt=" image 1"
                 className="md:hidden md:rounded-xl w-full h-full"
+                loading="lazy"
               />
               <img
                 src={slides[0].img}
                 alt=" image 1"
                 className="hidden md:block md:rounded-xl w-full h-full "
+                loading="lazy"
               />
               <BsChevronCompactLeft
                 size={30}
@@ -137,6 +140,7 @@ interface Slide {
                           <CardContent className="flex items-center justify-center p-2">
                             <img
                               key={index}
+                              loading="lazy"
                               src={slide.img}
                               alt={`image ${index + 1}`}
                               className="w-20 rounded-xl cursor-pointer hover:scale-105 duration-200 max-h-[50px]"
@@ -184,12 +188,13 @@ interface Slide {
                 </p>
                 <p className="flex gap-x-2" ><MapPin size={20} /> Nr. Pitambar Circle</p>
               </div>
+              <Link href={`/reservation`} className="w-full lg:w-3/5 flex justify-center items-center gap-4 py-4 md:py-2 mt-4 rounded-xl bg-blue-700 text-white font-bold hover:scale-105 duration-200 active:bg-green-600" >
               <button
                 onClick={addToCart}
-                className="w-full lg:w-3/5 flex justify-center items-center gap-4 py-4 md:py-2 mt-4 rounded-xl bg-blue-700 text-white font-bold hover:scale-105 duration-200 active:bg-green-600"
               >
                Reserve a Table
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -211,6 +216,7 @@ interface Slide {
         >
           <div className="relative w-full h-full">
             <img
+            loading="lazy"
               src={slides[curentIndex].img}
               alt=" image 1"
               className="w-full h-full md:rounded-xl"

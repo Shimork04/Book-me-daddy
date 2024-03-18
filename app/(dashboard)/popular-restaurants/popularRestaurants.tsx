@@ -29,7 +29,7 @@ export const PopularRestaurants = () => {
   ];
 
   return (
-    <div className="mt-5 gap-y-2 flex flex-col">
+    <div className="mt-5 gap-y-2 flex flex-col w-full">
       <div className="flex items-center justify-between">
         <span className=" text-xl lg:text-2xl font-semibold">
           Popular Restaurants
@@ -64,18 +64,18 @@ export const PopularRestaurants = () => {
         <Toggle aria-label="Toggle" variant="outline" size="sm" className="xs:text-xs">Ratings</Toggle>
       </div>
       </div>
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-between items-center">
       <div className="mx-11 xs:mx-5 xs:max-w-[310px]">
         <Carousel
           plugins={[plugin.current]}
-          className="max-w-xl sm:max-w-2xl md:max-w-2xl lg:max-w-2xl"
+          className="max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-3xl xl:max-w-3xl"
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
           <CarouselPrevious className="hidden lg:flex" />
           <CarouselContent>
             {RestaurantsArray.map((imageUrl, index) => (
-              <Link href={`/restaurant/${id}`} >
+              <Link href={`/restaurant/1234`}>
               <CarouselItem
                 key={index}
                 className="sm:basis-1/2 md:basis-1/2 lg:basis-1/2 xl:basis-1/2 xs:basis-[80%] xsm:basis-[80%]"

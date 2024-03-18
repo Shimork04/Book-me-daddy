@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger,DialogHeader, DialogFooter } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTrigger,DialogHeader, DialogFooter, DialogClose } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Rating } from "@material-tailwind/react"

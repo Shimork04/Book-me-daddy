@@ -19,22 +19,22 @@ export const Ads = () => {
   const imageArray = ["/offer1.jpg", "/offer1.jpg", "/offer1.jpg", "/offer1.jpg", "/offer1.jpg"];
 
   return (
-    <div>
+    <div className="w-full">
       <div className="flex items-center justify-between">
         <span className=" text-xl lg:text-2xl font-semibold">Special Offers</span>
         <Button variant="ghost" className="m-0 font-semibold text-blue-700">See all</Button>
       </div>
-      <div className="m-2">
+      <div className="m-2 flex justify-center w-full">
       <Carousel
         plugins={[plugin.current]}
-        className="max-w-md xsm:max-w-lg"
+        className="max-w-md xsm:max-w-2xl md:max-w-2xl lg:max-w-4xl"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
         <CarouselPrevious className="hidden lg:flex" />
         <CarouselContent>
           {imageArray.map((imageUrl, index) => (
-            <CarouselItem key={index} className="pl-4 sm:basis-1/3 md:basis-1/3 lg:basis-1/3 xl:basis-1/4 xs:basis-1/1 xsm:basis-1/2">
+            <CarouselItem key={index} className="pl-4 sm:basis-1/3 md:basis-1/3 lg:basis-[30%] xl:basis-1/4 xs:basis-1/1 xsm:basis-1/2">
               <div className="p-1">
                 <Card>
                   <CardContent className="flex items-center justify-center p-2">

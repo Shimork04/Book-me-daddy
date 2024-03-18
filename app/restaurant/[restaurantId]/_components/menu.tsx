@@ -25,7 +25,7 @@ export const Menu = () => {
       </div>
       <div className="flex flex-col md:flex-row md:gap-x-4 gap-y-4 md:items-center">
         <div className="flex items-center">
-          <Search className="absolute transform left-7 h-4 w-4 text-muted-foreground" />
+          <Search className="relative transform left-7 h-4 w-4 text-muted-foreground" />
           <Input
             // onChange={} handle changes
             className="w-full max-w-96 pl-9"

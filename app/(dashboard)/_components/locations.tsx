@@ -42,10 +42,10 @@ export function Locations() {
           variant="ghost"
           role="combobox"
           aria-expanded={open}
-          className="bg-transparent hover:bg-transparent font-bold text-xs pl-5 md:text-sm md:p-4 md:mr-4 max-w-[9rem] md:max-w-[12rem] overflow-ellipsis outline-none text-white"
+          className="bg-transparent hover:bg-transparent text-xs pl-5 md:text-sm md:p-4 md:mr-4 max-w-[9rem] md:max-w-[12rem] overflow-ellipsis outline-none text-white"
         >
           {value}
-          <ChevronDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronDownIcon className="ml-1 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
