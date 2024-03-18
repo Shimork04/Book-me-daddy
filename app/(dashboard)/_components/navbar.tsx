@@ -28,7 +28,7 @@ export const NavBar = () => {
           </span>
         </div>
 
-        <div className="xl:max-w-lg 2xl:max-w-2xl  bg-blue-500 rounded-md flex items-center xs:p-2 py-1 px-2 xs:flex-col xs:items-start xs:w-full md:w-3/5 ">
+        <div className="lg:max-w-3xl xl:max-w-3xl 2xl:max-w-2xl  bg-blue-500 rounded-md flex items-center xs:p-2 py-1 px-2 xs:flex-col xs:items-start xs:w-full md:w-3/5 ">
         <div className="flex items-center gap-x-1">
           <Image
             src="/location.png"
