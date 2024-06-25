@@ -1,4 +1,4 @@
-# Try here : https://table-up.vercel.app/
+## Try here : https://table-up.vercel.app/
 
 ## Getting Started
 
